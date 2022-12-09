@@ -16,7 +16,7 @@
       ref="input"
       v-model="multiple ? presentText : inputValue"
       :size="realSize"
-      :placeholder="placeholder"
+      :placeholder="presentTags.length ? '' : placeholder"
       :readonly="readonly"
       :disabled="isDisabled"
       :validate-event="false"
@@ -481,7 +481,7 @@ export default {
       this.$nextTick(() => {
         if (this.config.multiple) {
           this.computePresentTags();
-          this.presentText = this.presentTags.length ? ' ' : null;
+          this.presentText = this.presentTags.length ? '' : null;
         } else {
           this.computePresentText();
         }
