@@ -8,7 +8,7 @@
         'has-time': showTime
       }, popperClass]">
       <div class="el-picker-panel__body-wrapper">
-        <div class="el-picker-panel__sidebar">
+        <div class="el-picker-panel__sidebar" v-if="shortcuts || $slots.sidebar">
           <template v-if="shortcuts">
             <button
               type="button"
