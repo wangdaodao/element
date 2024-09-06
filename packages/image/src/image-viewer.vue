@@ -53,6 +53,7 @@
 </template>
 
 <script>
+import Locale from 'element-ui/src/mixins/locale';
 import { on, off } from 'element-ui/src/utils/dom';
 import { rafThrottle, isFirefox } from 'element-ui/src/utils/util';
 import { PopupManager } from 'element-ui/src/utils/popup';
@@ -72,7 +73,7 @@ const mousewheelEventName = isFirefox() ? 'DOMMouseScroll' : 'mousewheel';
 
 export default {
   name: 'elImageViewer',
-
+  mixins: [Locale],
   props: {
     urlList: {
       type: Array,
@@ -234,7 +235,7 @@ export default {
     },
     handleImgError(e) {
       this.loading = false;
-      e.target.alt = '加载失败';
+      e.target.alt = this.t('el.image.error');
     },
     handleMouseDown(e) {
       if (this.loading || e.button !== 0) return;
