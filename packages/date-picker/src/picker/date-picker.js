@@ -22,6 +22,10 @@ export default {
       type: String,
       default: 'date'
     },
+    clearable: {
+      type: Boolean,
+      default: true
+    },
     timeArrowControl: Boolean
   },
 
